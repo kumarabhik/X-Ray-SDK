@@ -1,0 +1,33 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - XRAY_DB=/data/xray.db
+      # Future LLM vars (optional)
+      - XRAY_LLM_MODE=${XRAY_LLM_MODE:-mock}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+    volumes:
+      - xray_data:/data
+    restart: unless-stopped
+    env_file:
+      - .env
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: apps/dashboard/Dockerfile
+      args:
+        - VITE_API_BASE=${VITE_API_BASE:-http://localhost:8000}
+    ports:
+      - "5173:80"
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  xray_data:
+

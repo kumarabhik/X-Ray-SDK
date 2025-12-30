@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Node / frontend
+node_modules/
+dist/
+.vite/
+.next/
+out/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs & DB
+*.log
+xray.db
+*.sqlite
+*.sqlite3
+
+# Local queue for SDK (your buffering file)
+.xray_queue.jsonl
