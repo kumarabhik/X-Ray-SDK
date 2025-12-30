@@ -49,23 +49,23 @@ This creates a **decision trail** that can be replayed and compared across runs.
 ## 🧩 Project Structure
 
 .
+.
 ├── apps/
-│ ├── api/ # FastAPI backend
-│ │ ├── main.py # API endpoints
-│ │ └── llm.py # LLM adapter (mock / real)
-│ └── dashboard/ # Dashboard UI
+│   ├── api/                       # FastAPI backend
+│   │   ├── main.py                # API endpoints (executions, steps, diff, demo)
+│   │   └── llm.py                 # LLM adapter (mock / real)
+│   │
+│   └── dashboard/                 # Decision Trail Dashboard UI
 │
 ├── packages/
-│ └── xray_sdk/ # Reusable X-Ray SDK
-│ └── xray_sdk/
-│ └── client.py
+│   └── xray_sdk/                  # Reusable X-Ray SDK
+│       └── xray_sdk/
+│           └── client.py          # SDK client (execution + step capture)
 │
-├── run_demo.py # Demo pipeline using the SDK
+├── run_demo.py                    # Demo pipeline using the X-Ray SDK
 ├── README.md
 └── .gitignore
 
-yaml
-Copy code
 
 ---
 
@@ -199,3 +199,4 @@ add role-based access and permissions
 store traces in a scalable event store
 
 add metrics and alerting on decision anomalies
+
