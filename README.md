@@ -49,7 +49,6 @@ This creates a **decision trail** that can be replayed and compared across runs.
 ## 🧩 Project Structure
 
 .
-.
 ├── apps/
 │   ├── api/                       # FastAPI backend
 │   │   ├── main.py                # API endpoints (executions, steps, diff, demo)
@@ -65,7 +64,6 @@ This creates a **decision trail** that can be replayed and compared across runs.
 ├── run_demo.py                    # Demo pipeline using the X-Ray SDK
 ├── README.md
 └── .gitignore
-
 
 ---
 
@@ -199,4 +197,5 @@ add role-based access and permissions
 store traces in a scalable event store
 
 add metrics and alerting on decision anomalies
+
 
